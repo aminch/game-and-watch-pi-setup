@@ -38,7 +38,10 @@ arm_gcc_version="12.3.1-1.2"
 arm_gcc="xpack-arm-none-eabi-gcc-"$arm_gcc_version
 
 # 64/32 bit options
-if [ "$arch" == 'aarch64' ]
+if [ "$arch" == 'x86_64' ]
+then
+   arm_gcc_file=$arm_gcc"-linux-x64.tar.gz"
+elif [ "$arch" == 'aarch64' ]
 then
    arm_gcc_file=$arm_gcc"-linux-arm64.tar.gz"
 else
